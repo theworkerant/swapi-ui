@@ -4,7 +4,7 @@ import Ship from './Ship.js';
 function Ships(props) {
   const ships = props.ships.map((ship) =>
     <li
-      key={ship.model}
+      key={ship.name}
       className={props.selectedShip.name === ship.name ? "ship selected" : "ship"}
       onClick={() => props.selectShip(ship)}
     >
