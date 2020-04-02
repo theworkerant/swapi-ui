@@ -5,17 +5,15 @@ function Ships(props) {
   const ships = props.ships.map((ship) =>
     <li
       key={ship.name}
-      className={props.selectedShip.name === ship.name ? "ship selected" : "ship"}
-      onClick={() => props.selectShip(ship)}
+      className={props.selectedShip && props.selectedShip.name === ship.name ? "ship selected" : "ship"}
+      onClick={() => props.setShip(ship)}
     >
       <Ship ship={ship} />
     </li>
   );
 
   return (
-    <ul className="ships">
-      {ships}
-    </ul>
+    <ul className="ships">{ships}</ul>
   );
 }
 

@@ -7,10 +7,7 @@ import './App.css';
 function App() {
   const [loading, setLoading] = useState(false);
   const [ships, setShips] = useState([]);
-  const [ship, setShip] = useState({pilots: []});
-  const selectShip = (ship) => {
-    setShip(ship);
-  };
+  const [ship, setShip] = useState(undefined);
 
   useEffect(() => {
     setLoading(true);
@@ -45,8 +42,15 @@ function App() {
       </header>
 
       <div className="pilots-and-ships">
-        <Ships ships={ships} selectedShip={ship} selectShip={selectShip}/>
-        <Pilots ship={ship} pilots={ship.pilots}/>
+        <Ships ships={ships} selectedShip={ship} setShip={setShip}/>
+        {
+          ship
+            ?
+              ship.pilots && ship.pilots.length
+                ? <Pilots ship={ship} />
+                : <h3>No Famous Pilots!</h3>
+            : <h3>No Ship Selected!</h3>
+        }
       </div>
     </div>
   );
