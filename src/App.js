@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     setLoading(true);
 
-    // Get all starship pages! There are 37, 10 per page
+    // Get all starship pages! There are 37, 10 per page, seems fine.
     const shipPages = [1,2,3,4];
     const allShipRequests = shipPages.map((page) => {
       return fetch(`https://swapi.co/api/starships/?page=${page}`)
@@ -37,7 +37,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Famous Ships and Their Pilots</h1>
+
         <img src={logo} className="App-logo" alt="Luke" />
+
         { loading ? <h3>Loading!</h3> : "" }
       </header>
 

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-function Pilots(props) {
+function Pilots({ship}) {
   const [loading, setLoading] = useState(false);
   const [pilots, setPilots] = useState([]);
 
   useEffect(() => {
     setLoading(true);
-    const allPilotRequests = props.ship.pilots.map((url) => {
+    const allPilotRequests = ship.pilots.map((url) => {
       return fetch(url).then(response => response.json())
     });
 
@@ -21,7 +21,7 @@ function Pilots(props) {
       setLoading(false);
       alert('Fetching data failed!:' + error);
     });
-  }, [props.ship, props.ship.pilots]);
+  }, [ship, ship.pilots]);
 
   return (
     loading

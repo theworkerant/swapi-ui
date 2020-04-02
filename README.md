@@ -69,7 +69,7 @@ Only submit your own work. You can use libraries and frameworks, but make sure y
 The project is deliberately open-ended because we want to see how you build it--there is not any preferred way to get to the end result.
 
 ### Directions:
-Please run `npm start` and go to [http://localhost:3000](http://localhost:3000) to view the project.
+Please run `npm i; npm start` and go to [http://localhost:3000](http://localhost:3000) to view the project.
 
 ---
 
